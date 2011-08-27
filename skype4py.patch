@@ -1,0 +1,22 @@
+--- /usr/share/pyshared/Skype4Py/skype.py	2008-10-31 15:34:12.000000000 +0000
++++ /usr/share/pyshared/Skype4Py/skype.py	2011-08-27 17:36:08.969168423 +0100
+@@ -257,6 +257,8 @@ class ISkype(EventHandlingBase):
+                     o = IChatMessage(ObjectId, self)
+                     if PropName == 'STATUS':
+                         self._CallEventHandler('MessageStatus', o, Value)
++                    if PropName == 'BODY':
++                        self._CallEventHandler('MessageEdited', o)
+                 elif ObjectType == 'APPLICATION':
+                     o = IApplication(ObjectId, self)
+                     if PropName == 'CONNECTING':
+@@ -1560,6 +1562,10 @@ class ISkypeEvents(object):
+         @param Visible: Tells if the group is visible or not.
+         @type Visible: bool
+         '''
++    
++    def MessageEdited(self, Message):
++        '''This event is caused by a message Edit
++        '''
+ 
+     def MessageHistory(self, Username):
+         '''This event is caused by a change in message history.

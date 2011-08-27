@@ -1,0 +1,19 @@
+TODO
+----
+
+Features:
+* User Configuration
+* Group Chat Only
+* or Private Chat Only
+* Self-Notify via skype, not whole group or other person.
+
+Skype Robustness:
+* Attempt to start skype if not running
+* Attempt to restart skype if it has crashed
+* Detect if skype has crashed.
+* Reconnect to skype if it has been restart
+
+General:
+* Clear old messages from memory
+
+
